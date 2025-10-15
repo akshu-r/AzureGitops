@@ -9,6 +9,7 @@ It demonstrates how to build, containerize, and deploy multiple microservices wi
 
 ## 🚀 Step-by-Step Implementation
 **1. Azure DevOps Setup**
+<img width="1682" height="775" alt="azure devops" src="https://github.com/user-attachments/assets/a7bd4b8b-769c-4d59-803d-adf74486424c" />
 
 - Configured Azure DevOps as the CI/CD tool.
 
@@ -20,6 +21,7 @@ azure-pipelines-result.yml
 
 azure-pipelines-worker.yml
 ```
+<img width="1318" height="757" alt="votecicd" src="https://github.com/user-attachments/assets/ed13d754-5ffd-4550-b80e-a052170e1b2a" />
 
 Each pipeline:
 
@@ -31,6 +33,7 @@ Each pipeline:
 
 - Pushes the image to Azure Container Registry (ACR).
 
+<img width="1325" height="642" alt="registry" src="https://github.com/user-attachments/assets/8279f319-8730-4b1f-b4bd-d1297d6ce30e" />
 
 **2. Azure Agent Setup**
 
@@ -42,6 +45,7 @@ Each pipeline:
 
 **3. AKS Cluster & ArgoCD Configuration**
 
+
 - Created an AKS cluster using the Azure CLI.
 
 - Installed ArgoCD in the AKS cluster:
@@ -50,6 +54,8 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 - Configured applications in ArgoCD to track manifests
+  
+<img width="1652" height="443" alt="kubernetes" src="https://github.com/user-attachments/assets/a4a2e01c-cc2f-4170-a688-387f87413151" />
 
 **4. Kubernetes Manifests**
 
@@ -70,6 +76,8 @@ All manifests are version-controlled under k8s-specifications/.
 - When a commit occurs, ArgoCD automatically syncs the desired state to the AKS cluster.
 
 - Kubernetes pulls the latest image from ACR and performs a rolling update.
+  
+<img width="1856" height="781" alt="argo" src="https://github.com/user-attachments/assets/030e65f7-2ec6-4eb4-97a7-bf42fc619c3e" />
 
 ## 🏁 Conclusion
 
